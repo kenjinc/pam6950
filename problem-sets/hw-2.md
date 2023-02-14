@@ -115,18 +115,21 @@ print(as_tibble(neighbor_attrib))
 neighbor_seg <- read_csv("/Users/kenjinchang/github/pam6950/neighbor_seg.csv")
 ```
 
-    ## New names:
-    ## Rows: 0 Columns: 1
-    ## ── Column specification
-    ## ──────────────────────────────────────────────────────── Delimiter: "," chr
-    ## (1): ...1
-    ## ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
-    ## Specify the column types or set `show_col_types = FALSE` to quiet this message.
-    ## • `` -> `...1`
+    ## Rows: 1 Columns: 6
+    ## ── Column specification ────────────────────────────────────────────────────────
+    ## Delimiter: ","
+    ## dbl (6): B_wxa, B_wxb, B_wxh, B_povxnopov, B_singparentxtwoparent, B_edlowxe...
+    ## 
+    ## ℹ Use `spec()` to retrieve the full column specification for this data.
+    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
 ``` r
 print(as_tibble(neighbor_seg))
 ```
 
-    ## # A tibble: 0 × 1
-    ## # … with 1 variable: ...1 <chr>
+    ## # A tibble: 1 × 6
+    ##    B_wxa  B_wxb  B_wxh B_povxnopov B_singparentxtwoparent B_edlowxedother
+    ##    <dbl>  <dbl>  <dbl>       <dbl>                  <dbl>           <dbl>
+    ## 1 0.0276 0.0598 0.0645       0.711                  0.167           0.789
+
+## q2

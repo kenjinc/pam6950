@@ -67,3 +67,5 @@ neighbor_seg <- read_csv("/Users/kenjinchang/github/pam6950/neighbor_seg.csv")
 print(as_tibble(neighbor_seg))
 ```
 
+## q2
+
