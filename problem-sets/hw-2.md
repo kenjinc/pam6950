@@ -174,3 +174,28 @@ ggplot(q2,aes(x=povxnopov)) +
 ## q3
 
 Still merging…
+
+## q4
+
+``` r
+library(choroplethr)
+```
+
+    ## Loading required package: acs
+
+    ## Loading required package: XML
+
+    ## 
+    ## Attaching package: 'acs'
+
+    ## The following object is masked from 'package:dplyr':
+    ## 
+    ##     combine
+
+    ## The following object is masked from 'package:base':
+    ## 
+    ##     apply
+
+``` r
+library(choroplethrZip)
+```

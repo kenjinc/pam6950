@@ -93,3 +93,12 @@ ggplot(q2,aes(x=povxnopov)) +
 ## q3
 
 Still merging...
+
+## q4
+
+```{r}
+library(choroplethr)
+library(choroplethrZip)
+```
+
+
