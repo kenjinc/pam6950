@@ -65,3 +65,19 @@ pop_characteristics <- read_csv("/Users/kenjinchang/github/pam6950/pop_character
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+``` r
+print(as_tibble(pop_characteristics))
+```
+
+    ## # A tibble: 1 × 17
+    ##   num_persons prop_asian prop_…¹ prop_…² prop_…³ num_a…⁴ num_b…⁵ num_h…⁶ num_w…⁷
+    ##         <dbl>      <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+    ## 1     1537741     0.0303   0.176  0.0959   0.698   46611  270518  147503 1073109
+    ## # … with 8 more variables: num_pov <dbl>, rate_pov <dbl>,
+    ## #   num_sing_parent <dbl>, num_households <dbl>, rate_sing_parent <dbl>,
+    ## #   num_25_and_over_no_HS <dbl>, num_25_and_over <dbl>,
+    ## #   prop_25_and_over_no_HS <dbl>, and abbreviated variable names ¹​prop_black,
+    ## #   ²​prop_hisp, ³​prop_white, ⁴​num_asian, ⁵​num_black, ⁶​num_hisp, ⁷​num_white
+
+### Table 2

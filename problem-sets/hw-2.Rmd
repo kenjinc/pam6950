@@ -44,3 +44,10 @@ Now, we have to generate three tables describing this CBSA: one to summarize the
 pop_characteristics <- read_csv("/Users/kenjinchang/github/pam6950/pop_characteristics.csv")
 ```
 
+```{r}
+print(as_tibble(pop_characteristics))
+```
+### Table 2
+
+
+
