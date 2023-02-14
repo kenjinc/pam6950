@@ -41,6 +41,6 @@ Now, we have to generate three tables describing this CBSA: one to summarize the
 ### Table 1
 
 ```{r}
-pop_characteristics <- read_csv("kenjinchang/github/pam6950/pop_characteristics.csv")
+pop_characteristics <- read_csv("/Users/kenjinchang/github/pam6950/pop_characteristics.csv")
 ```
 
