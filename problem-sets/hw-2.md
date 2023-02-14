@@ -134,6 +134,11 @@ print(as_tibble(neighbor_seg))
 
 ## q2
 
+For this portion, I’ve created a dedicated dataframe to capture the
+distribution in tract-level exposure index values, both for White- and
+Hispanic-identifying individuals in the Milwaukee CBSA and for
+poverty-stricken and non-poverty-stricken individuals.
+
 ``` r
 q2 <- read_csv("/Users/kenjinchang/github/pam6950/q2.csv")
 ```
@@ -141,7 +146,27 @@ q2 <- read_csv("/Users/kenjinchang/github/pam6950/q2.csv")
     ## Rows: 431 Columns: 3
     ## ── Column specification ────────────────────────────────────────────────────────
     ## Delimiter: ","
-    ## dbl (3): tract, (niw/Nw)*(nih/ni), (nipov/Bpov)*(ninopov/ni)
+    ## dbl (3): tract, whitexhispanic, povxnopov
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+``` r
+ggplot(q2,aes(x=whitexhispanic)) +
+  geom_histogram(bins=120,color="gray50",size=.1,alpha=.8) +
+  xlab("White-Hispanic Interaction") +
+  ylab("Count") +
+  theme_classic()
+```
+
+![](hw-2_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+
+``` r
+ggplot(q2,aes(x=povxnopov)) +
+  geom_histogram(bins=120,color="gray50",size=.1,alpha=.8) +
+  xlab("Poverty-No Poverty Interaction") +
+  ylab("Count") +
+  theme_classic()
+```
+
+![](hw-2_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->

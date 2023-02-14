@@ -69,7 +69,23 @@ print(as_tibble(neighbor_seg))
 
 ## q2
 
+For this portion, I've created a dedicated dataframe to capture the distribution in tract-level exposure index values, both for White- and Hispanic-identifying individuals in the Milwaukee CBSA and for poverty-stricken and non-poverty-stricken individuals.
+
 ```{r}
 q2 <- read_csv("/Users/kenjinchang/github/pam6950/q2.csv")
 ```
 
+```{r}
+ggplot(q2,aes(x=whitexhispanic)) +
+  geom_histogram(bins=120,color="gray50",size=.1,alpha=.8) +
+  xlab("White-Hispanic Interaction") +
+  ylab("Count") +
+  theme_classic()
+```
+```{r}
+ggplot(q2,aes(x=povxnopov)) +
+  geom_histogram(bins=120,color="gray50",size=.1,alpha=.8) +
+  xlab("Poverty-No Poverty Interaction") +
+  ylab("Count") +
+  theme_classic()
+```
