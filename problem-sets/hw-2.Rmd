@@ -17,6 +17,7 @@ To accomplish this, we'll need to load a few packages.
 ```{r}
 library(haven)
 library(tidyverse)
+library(dplyr)
 ```
 
 Now, we can load the data into our environment: 
@@ -29,7 +30,17 @@ hw02_ltdb_2010 <- read_dta("~/Downloads/hw02_ltdb_2010.dta")
 
 The first question requires us to select one of the 100 largest CBSAs given in the dataset, which is provided by the cbsasamp1 variable. 
 
-I chose the Milwaukee-Waukesha-West Allis, WI CBSA. 
+I chose the Milwaukee-Waukesha-West Allis, WI CBSA. Based on this decision, let's go ahead and mutate the dataframe that all rows containing data outside this CBSA are removed.
+
+```{r}
+milwaukee_cbsa <- hw02_ltdb_2010 %>% filter(cbsaname == "Milwaukee-Waukesha-West Allis, WI CBSA")
+```
 
 Now, we have to generate three tables describing this CBSA: one to summarize the population characteristics, one to summarize relevant neighborhood attributes, and one to quantify the levels of neighborhood segregation.
+
+### Table 1
+
+```{r}
+pop_characteristics <- read_csv("kenjinchang/github/pam6950/pop_characteristics.csv")
+```
 
