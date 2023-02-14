@@ -200,6 +200,7 @@ library(choroplethr)
 library(choroplethrZip)
 library(ggplot2)
 library(tmap)
+library(tidycensus)
 ```
 
 Saving for now…
