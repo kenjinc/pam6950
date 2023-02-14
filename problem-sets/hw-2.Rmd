@@ -1,6 +1,6 @@
 ---
 title: "hw_2"
-output: html_document
+output: github_document
 date: "2023-02-14"
 ---
 
@@ -8,22 +8,28 @@ date: "2023-02-14"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## data
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+The first step in completing this problem set requires me to reformat the provided data file, `hw02_ltdb_2010.dta`, into a csv that capable of being read and mutated in RStudio.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+To accomplish this, we'll need to load a few packages.
 
-```{r cars}
-summary(cars)
+```{r}
+library(haven)
+library(tidyverse)
 ```
 
-## Including Plots
+Now, we can load the data into our environment: 
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+hw02_ltdb_2010 <- read_dta("~/Downloads/hw02_ltdb_2010.dta")
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## q1
+
+The first question requires us to select one of the 100 largest CBSAs given in the dataset, which is provided by the cbsasamp1 variable. 
+
+I chose the Milwaukee-Waukesha-West Allis, WI CBSA. 
+
+Now, we have to generate three tables describing this CBSA: one to summarize the population characteristics, one to summarize relevant neighborhood attributes, and one to quantify the levels of neighborhood segregation.
+
