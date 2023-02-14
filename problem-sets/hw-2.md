@@ -133,3 +133,15 @@ print(as_tibble(neighbor_seg))
     ## 1 0.0276 0.0598 0.0645       0.711                  0.167           0.789
 
 ## q2
+
+``` r
+q2 <- read_csv("/Users/kenjinchang/github/pam6950/q2.csv")
+```
+
+    ## Rows: 431 Columns: 3
+    ## ── Column specification ────────────────────────────────────────────────────────
+    ## Delimiter: ","
+    ## dbl (3): tract, (niw/Nw)*(nih/ni), (nipov/Bpov)*(ninopov/ni)
+    ## 
+    ## ℹ Use `spec()` to retrieve the full column specification for this data.
+    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
