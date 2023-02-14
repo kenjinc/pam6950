@@ -99,6 +99,8 @@ Still merging...
 ```{r}
 library(choroplethr)
 library(choroplethrZip)
+library(ggplot2)
+library(tmap)
 ```
 
 ```{r}

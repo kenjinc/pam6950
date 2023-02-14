@@ -198,6 +198,8 @@ library(choroplethr)
 
 ``` r
 library(choroplethrZip)
+library(ggplot2)
+library(tmap)
 ```
 
 Saving for now…
