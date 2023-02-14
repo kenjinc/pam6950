@@ -1,7 +1,7 @@
 ---
 title: "hw_2"
 output: github_document
-date: "2023-02-14"
+date: ""
 ---
 
 ```{r setup, include=FALSE}
@@ -38,7 +38,7 @@ milwaukee_cbsa <- hw02_ltdb_2010 %>% filter(cbsaname == "Milwaukee-Waukesha-West
 
 Now, we have to generate three tables describing this CBSA: one to summarize the population characteristics, one to summarize relevant neighborhood attributes, and one to quantify the levels of neighborhood segregation.
 
-### Table 1
+### table 1
 
 ```{r}
 pop_characteristics <- read_csv("/Users/kenjinchang/github/pam6950/pop_characteristics.csv")
@@ -47,7 +47,7 @@ pop_characteristics <- read_csv("/Users/kenjinchang/github/pam6950/pop_character
 ```{r}
 print(as_tibble(pop_characteristics))
 ```
-### Table 2
+### table 2
 
 ```{r}
 neighbor_attrib <- read_csv("/Users/kenjinchang/github/pam6950/neighbor_attrib.csv")
@@ -56,3 +56,10 @@ neighbor_attrib <- read_csv("/Users/kenjinchang/github/pam6950/neighbor_attrib.c
 ```{r}
 print(as_tibble(neighbor_attrib))
 ```
+
+### table 3
+
+
+
+
+

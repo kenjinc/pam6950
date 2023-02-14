@@ -1,6 +1,5 @@
 hw_2
 ================
-2023-02-14
 
 ## data
 
@@ -52,7 +51,7 @@ summarize the population characteristics, one to summarize relevant
 neighborhood attributes, and one to quantify the levels of neighborhood
 segregation.
 
-### Table 1
+### table 1
 
 ``` r
 pop_characteristics <- read_csv("/Users/kenjinchang/github/pam6950/pop_characteristics.csv")
@@ -80,7 +79,7 @@ print(as_tibble(pop_characteristics))
     ## #   prop_25_and_over_no_HS <dbl>, and abbreviated variable names ¹​prop_black,
     ## #   ²​prop_hisp, ³​prop_white, ⁴​num_asian, ⁵​num_black, ⁶​num_hisp, ⁷​num_white
 
-### Table 2
+### table 2
 
 ``` r
 neighbor_attrib <- read_csv("/Users/kenjinchang/github/pam6950/neighbor_attrib.csv")
@@ -109,3 +108,5 @@ print(as_tibble(neighbor_attrib))
     ## #   neigh_sd_prop_black <dbl>, neigh_min_prop_black <dbl>,
     ## #   neigh_25_prop_black <dbl>, neigh_med_prop_black <dbl>,
     ## #   neigh_75_prop_black <dbl>, neigh_max_prop_black <dbl>, …
+
+### table 3
