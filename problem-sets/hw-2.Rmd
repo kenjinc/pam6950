@@ -89,5 +89,7 @@ ggplot(q2,aes(x=povxnopov)) +
   ylab("Count") +
   theme_classic()
 ```
+
 ## q3
 
+Still merging...
