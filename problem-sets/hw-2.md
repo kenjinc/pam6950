@@ -153,7 +153,7 @@ q2 <- read_csv("/Users/kenjinchang/github/pam6950/q2.csv")
 
 ``` r
 ggplot(q2,aes(x=whitexhispanic)) +
-  geom_histogram(bins=120,color="gray50",size=.1,alpha=.8) +
+  geom_histogram(bins=75,color="gray50",size=.1,alpha=.8) +
   xlab("White-Hispanic Interaction") +
   ylab("Count") +
   theme_classic()
@@ -163,7 +163,7 @@ ggplot(q2,aes(x=whitexhispanic)) +
 
 ``` r
 ggplot(q2,aes(x=povxnopov)) +
-  geom_histogram(bins=120,color="gray50",size=.1,alpha=.8) +
+  geom_histogram(bins=75,color="gray50",size=.1,alpha=.8) +
   xlab("Poverty-No Poverty Interaction") +
   ylab("Count") +
   theme_classic()
