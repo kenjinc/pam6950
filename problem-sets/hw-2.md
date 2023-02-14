@@ -81,3 +81,31 @@ print(as_tibble(pop_characteristics))
     ## #   ²​prop_hisp, ³​prop_white, ⁴​num_asian, ⁵​num_black, ⁶​num_hisp, ⁷​num_white
 
 ### Table 2
+
+``` r
+neighbor_attrib <- read_csv("/Users/kenjinchang/github/pam6950/neighbor_attrib.csv")
+```
+
+    ## Rows: 1 Columns: 57
+    ## ── Column specification ────────────────────────────────────────────────────────
+    ## Delimiter: ","
+    ## dbl (57): num_neigh, neigh_mean_num_persons, neigh_sd_num_persons, neigh_min...
+    ## 
+    ## ℹ Use `spec()` to retrieve the full column specification for this data.
+    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+``` r
+print(as_tibble(neighbor_attrib))
+```
+
+    ## # A tibble: 1 × 57
+    ##   num_neigh neigh_mean…¹ neigh…² neigh…³ neigh…⁴ neigh…⁵ neigh…⁶ neigh…⁷ neigh…⁸
+    ##       <dbl>        <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+    ## 1       431        3568.   1478.       0   2462.    3406   4486.    9412  0.0306
+    ## # … with 48 more variables: neigh_sd_prop_asian <dbl>,
+    ## #   neigh_min_prop_asian <dbl>, neigh_25_prop_asian <dbl>,
+    ## #   neigh_med_prop_asian <dbl>, neigh_75_prop_asian <dbl>,
+    ## #   neigh_max_prop_asian <dbl>, neigh_mean_prop_black <dbl>,
+    ## #   neigh_sd_prop_black <dbl>, neigh_min_prop_black <dbl>,
+    ## #   neigh_25_prop_black <dbl>, neigh_med_prop_black <dbl>,
+    ## #   neigh_75_prop_black <dbl>, neigh_max_prop_black <dbl>, …

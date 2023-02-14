@@ -49,5 +49,10 @@ print(as_tibble(pop_characteristics))
 ```
 ### Table 2
 
+```{r}
+neighbor_attrib <- read_csv("/Users/kenjinchang/github/pam6950/neighbor_attrib.csv")
+```
 
-
+```{r}
+print(as_tibble(neighbor_attrib))
+```
