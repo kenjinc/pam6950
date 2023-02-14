@@ -1,4 +1,4 @@
-hw_2
+hw-2
 ================
 
 ## data
@@ -110,3 +110,23 @@ print(as_tibble(neighbor_attrib))
     ## #   neigh_75_prop_black <dbl>, neigh_max_prop_black <dbl>, …
 
 ### table 3
+
+``` r
+neighbor_seg <- read_csv("/Users/kenjinchang/github/pam6950/neighbor_seg.csv")
+```
+
+    ## New names:
+    ## Rows: 0 Columns: 1
+    ## ── Column specification
+    ## ──────────────────────────────────────────────────────── Delimiter: "," chr
+    ## (1): ...1
+    ## ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+    ## Specify the column types or set `show_col_types = FALSE` to quiet this message.
+    ## • `` -> `...1`
+
+``` r
+print(as_tibble(neighbor_seg))
+```
+
+    ## # A tibble: 0 × 1
+    ## # … with 1 variable: ...1 <chr>

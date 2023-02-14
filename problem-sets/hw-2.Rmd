@@ -1,5 +1,5 @@
 ---
-title: "hw_2"
+title: "hw-2"
 output: github_document
 date: ""
 ---
@@ -59,7 +59,11 @@ print(as_tibble(neighbor_attrib))
 
 ### table 3
 
+```{r}
+neighbor_seg <- read_csv("/Users/kenjinchang/github/pam6950/neighbor_seg.csv")
+```
 
-
-
+```{r}
+print(as_tibble(neighbor_seg))
+```
 
