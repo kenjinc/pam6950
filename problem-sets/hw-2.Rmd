@@ -128,4 +128,43 @@ ggplot(medincome,aes(fill=estimate)) +
        fill="ACS Estimate") + 
   theme_void()
 ```
+Experimenting with tmap: 
 
+```{r}
+milwaukee_race <- get_decennial(
+  geography="tract",
+  state="WI",
+  county=c(
+    "Dodge",
+    "Jefferson",
+    "Milwaukee",
+    "Ozaukee",
+    "Racine",
+    "Walworth",
+    "Washington",
+    "Waukesha"),
+  variables=c(
+    Hispanic="P2_002N",
+    White="P2_005N",
+    Black="P2_006N",
+    Asian="P2_008N"),
+  summary_var="P2_001N",
+  year=2020,geometry=TRUE
+) %>% mutate(percent=100*(value/summary_value))
+```
+
+```{r}
+milwaukee_black <- filter(milwaukee_race,
+                          variable=="Black")
+```
+
+```{r}
+milwaukee_black[is.na(milwaukee_black)] <- 1
+lapply(milwaukee_black,na.omit)
+```
+
+
+tm_shape(milwaukee_black) + 
+  tm_polygons(col="percent")
+
+Couldn't quite get this to work...
