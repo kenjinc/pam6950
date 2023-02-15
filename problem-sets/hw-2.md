@@ -203,4 +203,32 @@ library(tmap)
 library(tidycensus)
 ```
 
+``` r
+medincome <- get_acs(
+  geography="tract",
+  variables="B19013_001",
+  state="WI",
+  geometry=TRUE,
+  year=2020)
+```
+
+    ## Getting data from the 2016-2020 5-year ACS
+
+    ## Warning: • You have not set a Census API key. Users without a key are limited to 500
+    ## queries per day and may experience performance limitations.
+    ## ℹ For best results, get a Census API key at http://api.census.gov/data/
+    ## key_signup.html and then supply the key to the `census_api_key()` function to
+    ## use it throughout your tidycensus session.
+    ## This warning is displayed once per session.
+
+    ## Downloading feature geometry from the Census website.  To cache shapefiles for use in future sessions, set `options(tigris_use_cache = TRUE)`.
+
+    ##   |                                                                              |                                                                      |   0%  |                                                                              |=                                                                     |   1%  |                                                                              |=                                                                     |   2%  |                                                                              |==                                                                    |   2%  |                                                                              |==                                                                    |   3%  |                                                                              |==                                                                    |   4%  |                                                                              |===                                                                   |   4%  |                                                                              |===                                                                   |   5%  |                                                                              |====                                                                  |   5%  |                                                                              |====                                                                  |   6%  |                                                                              |=====                                                                 |   7%  |                                                                              |======                                                                |   9%  |                                                                              |=======                                                               |  10%  |                                                                              |========                                                              |  11%  |                                                                              |==========                                                            |  14%  |                                                                              |==========                                                            |  15%  |                                                                              |===========                                                           |  15%  |                                                                              |=============                                                         |  18%  |                                                                              |==============                                                        |  20%  |                                                                              |================                                                      |  23%  |                                                                              |=================                                                     |  24%  |                                                                              |=================                                                     |  25%  |                                                                              |====================                                                  |  29%  |                                                                              |======================                                                |  32%  |                                                                              |=========================                                             |  36%  |                                                                              |=================================                                     |  47%  |                                                                              |===========================================                           |  62%  |                                                                              |================================================                      |  68%  |                                                                              |=================================================                     |  70%  |                                                                              |======================================================                |  77%  |                                                                              |=======================================================               |  79%  |                                                                              |=================================================================     |  94%  |                                                                              |======================================================================| 100%
+
+``` r
+plot(medincome["estimate"])
+```
+
+![](hw-2_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+
 Saving for now…
