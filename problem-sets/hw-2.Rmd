@@ -104,6 +104,8 @@ library(tmap)
 library(tidycensus)
 ```
 
+Experimenting with tidycensus:
+
 ```{r}
 medincome <- get_acs(
   geography="tract",
@@ -114,4 +116,16 @@ medincome <- get_acs(
 plot(medincome["estimate"])
 ```
 
-Saving for now...
+Experimenting with ggplot2:
+
+```{r}
+ggplot(medincome,aes(fill=estimate)) + 
+  geom_sf() + 
+  scale_fill_distiller(palette="RdPu",
+                       direction=1) + 
+  labs(title="Median Household Income by Tract, 2020",
+       caption="Data Source: 2015-2020 ACS, US Census Bureau",
+       fill="ACS Estimate") + 
+  theme_void()
+```
+
