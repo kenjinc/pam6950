@@ -105,6 +105,13 @@ library(tidycensus)
 ```
 
 ```{r}
+medincome <- get_acs(
+  geography="tract",
+  variables="B19013_001",
+  state="WI",
+  geometry=TRUE,
+  year=2020)
+plot(medincome["estimate"])
 ```
 
 Saving for now...
