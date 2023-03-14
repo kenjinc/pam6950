@@ -417,3 +417,12 @@ position each centroid. beyond this, we are viewing and calculating
 distance using euclidean measures from each block group centroid to each
 possible center location, which do not account for transportation and
 road networks.
+
+### d
+
+wasn’t able to spend as much time on this as i would’ve liked, but you
+can imagine how one would want to incorporate additional information
+when making these types of decisions. in particular, it’d be useful to
+understand the proportion of families with children living below poverty
+that own motor vehicles, the availability and practicality of public
+transportation, road networks, etc.

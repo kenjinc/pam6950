@@ -154,3 +154,7 @@ i'm not sure if anything is necessarily lost, but it becomes more difficult, at 
 ### c
 
 because these calculations require us to establish centroids for each polygon, we are forced to treat each of the households represented within each block groups as being in the same relative position, regardless of where within the block they live. establishing a relative position to each possible center location therefore becomes somewhat problematic. in addition, we are also using acs data, which—as we've discussed—can be subject to sampling errors that may bias where we position each centroid. beyond this, we are viewing and calculating distance using euclidean measures from each block group centroid to each possible center location, which do not account for transportation and road networks.
+
+### d
+
+wasn't able to spend as much time on this as i would've liked, but you can imagine how one would want to incorporate additional information when making these types of decisions. in particular, it'd be useful to understand the proportion of families with children living below poverty that own motor vehicles, the availability and practicality of public transportation, road networks, etc.
