@@ -8,22 +8,118 @@ date: "2023-03-14"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## data prep and package loading
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+after importing the `tomp_poverty.dta` file into our environment, we can store the block group poverty data for tompkins country as a csv in our class repo using the following: 
 
-```{r cars}
-summary(cars)
+```{r,eval=FALSE}
+write.csv(tomp_poverty,"tomp_poverty.csv")
+print(tomp_poverty)
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+library(tidyverse)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## q1
+
+### a 
+
+first, we need to generate a new variable aggregating the number of families above and below poverty with children aged 0-17.
+
+```{r}
+tomp_poverty <- read.csv("tomp_poverty.csv")
+```
+
+
+```{r}
+tomp_poverty %>% 
+  mutate(fkids=fpovkids+fnopovkids)
+```
+
+with this new variable in place, we can then construct another dividing the number of families with children below poverty by the total number of families with children.
+
+```{r}
+tomp_poverty %>% 
+  mutate(fkids=fpovkids+fnopovkids,
+         prop_fkids_pov=fpovkids/fkids)
+```
+
+we can then group by urbanicity to see how the proportions for each block group vary by designation:
+
+```{r}
+tomp_poverty %>% 
+  mutate(fkids=fpovkids+fnopovkids,
+         prop_fkids_pov=fpovkids/fkids) %>%
+  group_by(urban) %>%
+  summarize(povrate_fkids=mean(prop_fkids_pov,na.rm=TRUE))
+```
+
+based on these results, we can see that the mean poverty rate among families with children is greater in rural areas (0.155 [3sf]) than urban areas (0.105 [3sf]). however, from my one-tailed t-test, this difference appears to be insignificant (p=0.115[3sf]). poverty in tompkins county therefore appears to impact a relatively equal share of rural and urban families with children.
+
+we can run a similar analysis for all families (i.e., not just those with children aged 0-17):
+
+```{r}
+tomp_poverty %>% 
+  mutate(prop_f_pov=(fpov+fpovkids)/fams) %>%
+  group_by(urban) %>%
+  summarize(povrate_f=mean(prop_f_pov,na.rm=TRUE)) 
+```
+
+again, we see that families living in rural areas tend to experience poverty at a greater rate than families living in urban areas, though the difference does not appear to be significant (p=0.749[3sf]).
+
+### b
+
+```{r}
+tomp_poverty %>% 
+  mutate(tot_fpovkids=sum(fpovkids),
+         tot_fnopovkids=sum(fnopovkids),
+         di=abs(fpovkids/tot_fpovkids - fnopovkids/tot_fnopovkids)) %>%
+  summarize(dissim=sum(di)/2)
+```
+
+when comparing families with children aged 0-17 who are living below poverty and families with children aged 0-17 who are not, we observed a dissimilarity index of 0.495 (3sf). this suggests that approximately half of all families with children living below poverty would need to change residence to create a more uniform distribution across block groups. because the index rangrs from 0.0 to 1.0, signifying complete integration and complete segregation, respectively, this index value appears to suggest that theire is a medium level of segregation. 
+
+### c 
+
+acs data are subject to errors in sampling, and the resulting biases from these errors are magnified when we use these data to observed phenomena at small spatial scales.
+
+in addition to this scaling issue, there are also issues in the reliability of acs survey results, with patterned variation occurring across different surveys.
+
+## q2
+
+loading in necessary packages:
+
+```{r}
+library(tidycensus)
+options(tigris_use_cache=TRUE)
+```
+
+loading in point data:
+
+
+
+### a
+
+```{r}
+tompkins <- get_acs(
+  state = "NY",
+  county = "Tompkins",
+  geography = "cbg",
+  variables = "B11003_003",
+  geometry = TRUE,
+  year = 2016
+)
+```
+
+```{r}
+tompkins %>% 
+  ggplot(aes(fill=estimate)) + 
+  
+  geom_sf(color=NA) + 
+  scale_fill_viridis_c(option="magma") + 
+  theme(axis.ticks=element_blank(),axis.text=element_blank())
+```
+
