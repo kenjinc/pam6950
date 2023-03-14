@@ -99,7 +99,7 @@ options(tigris_use_cache=TRUE)
 
 loading in point data:
 
-```{r}
+```{r, eval=FALSE}
 write.csv(tomp_sites,"tomp_sites.csv")
 print(tomp_sites)
 ```

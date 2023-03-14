@@ -336,6 +336,15 @@ options(tigris_use_cache=TRUE)
 
 loading in point data:
 
+``` r
+write.csv(tomp_sites,"tomp_sites.csv")
+print(tomp_sites)
+```
+
+``` r
+tomp_sites <- read.csv("tomp_sites.csv")
+```
+
 ### a
 
 ``` r
@@ -359,12 +368,15 @@ tompkins <- get_acs(
     ## This warning is displayed once per session.
 
 ``` r
-tompkins %>% 
-  ggplot(aes(fill=estimate)) + 
-  
-  geom_sf(color=NA) + 
-  scale_fill_viridis_c(option="magma") + 
-  theme(axis.ticks=element_blank(),axis.text=element_blank())
+ggplot() + 
+  geom_sf(data=tompkins,aes(fill=estimate)) + 
+  geom_point(data=tomp_sites,aes(x=xlon,y=ylat),color="white") +
+  scale_fill_viridis_c(option="magma") +
+  xlab("") + 
+  ylab("") +
+  labs(fill="Families",caption="White points indicate possible locations of child-care centers\n Projected using NAD 1983") +
+  ggtitle("Number of families with children aged 0-17 in each block group \nliving below poverty in Tompkins county") + 
+  theme(axis.ticks=element_blank(),axis.text=element_blank(),panel.background=element_rect(fill=NA))
 ```
 
-![](hw-5_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](hw-5_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
