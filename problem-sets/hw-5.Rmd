@@ -149,6 +149,8 @@ ggplot() +
   theme(axis.ticks=element_blank(),axis.text=element_blank(),panel.background=element_rect(fill=NA))
 ```
 
-there's a slight loss of richness, and it becomes more difficult, though not impossible, to distinguish between the point and area data.
+i'm not sure if anything is necessarily lost, but it becomes more difficult, at least for me, to distinguish between the point and area data. this could possibly be resolved by adding a black border to the white-filled points to add contrast in the areas where it is most needed (i.e., for the centers positioned in block groups with area data that is near the maximum or minimum).
+
+
 
 ### c
