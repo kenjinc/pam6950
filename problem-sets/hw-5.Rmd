@@ -101,6 +101,11 @@ loading in point data:
 
 ```{r}
 write.csv(tomp_sites,"tomp_sites.csv")
+print(tomp_sites)
+```
+
+
+```{r}
 tomp_sites <- read.csv("tomp_sites.csv")
 ```
 
