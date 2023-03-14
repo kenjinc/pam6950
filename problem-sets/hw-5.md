@@ -405,3 +405,15 @@ white-filled points to add contrast in the areas where it is most needed
 near the maximum or minimum).
 
 ### c
+
+because these calculations require us to establish centroids for each
+polygon, we are forced to treat each of the households represented
+within each block groups as being in the same relative position,
+regardless of where within the block they live. establishing a relative
+position to each possible center location therefore becomes somewhat
+problematic. in addition, we are also using acs data, which—as we’ve
+discussed—can be subject to sampling errors that may bias where we
+position each centroid. beyond this, we are viewing and calculating
+distance using euclidean measures from each block group centroid to each
+possible center location, which do not account for transportation and
+road networks.
