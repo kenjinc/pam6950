@@ -380,3 +380,24 @@ ggplot() +
 ```
 
 ![](hw-5_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+
+### b
+
+``` r
+ggplot() + 
+  geom_sf(data=tompkins,aes(fill=estimate)) + 
+  geom_point(data=tomp_sites,aes(x=xlon,y=ylat),color="white") +
+  scale_fill_distiller(palette="Greys") +
+  xlab("") + 
+  ylab("") +
+  labs(fill="Families",caption="White points indicate possible locations of child-care centers\n Projected using NAD 1983") +
+  ggtitle("Number of families with children aged 0-17 in each block group \nliving below poverty in Tompkins county") + 
+  theme(axis.ticks=element_blank(),axis.text=element_blank(),panel.background=element_rect(fill=NA))
+```
+
+![](hw-5_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+
+there’s a slight loss of richness, and it becomes more difficult, though
+not impossible, to distinguish between the point and area data.
+
+### c
